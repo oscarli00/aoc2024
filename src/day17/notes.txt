@@ -1,0 +1,27 @@
+Instruction 1 (2,4): set B = A%8
+Instruction 2 (1,5): set B = B xor 5
+Instruction 3 (7,5): set C = A >> B
+Instruction 4 (1,6): set B = B xor 6
+Instruction 5 (0,3): set A = A >> 3
+Instruction 6 (4,1): set B = B xor C
+Instruction 7 (5,5): output register B%8
+Instruction 8 (3,0): go back to instruction 1 if A != 0
+
+Instruction        : output (A%8) xor 3 xor (A>>(A%8 xor 5))
+Instruction        : set A = A >> 3
+Instruction        : go back to instruction 1 if A != 0
+
+Every loop: output ((A%8) xor 3 xor (A>>(A%8 xor 5))% 8) , set A = A>>3, repeat
+
+facts:
+Every instruction loop outputs 1 number, need 16 numbers so 16 loops
+Every instruction loop causes A = A>>3, then A must be 46/47/48 binary digits long
+
+First loop: (A xor 011 xor (A>>5)) & 111 = 010
+
+(A xor 3 xor A>>B) & 7 = 2
+
+
+A[47,46,45] xor 011 xor A[47,46,45]>>(A[47,46,45] xor 5) = 000 (0)
+A[47,46,45] xor A[47,46,45]>>(A[47,46,45] xor 5) = 011
+

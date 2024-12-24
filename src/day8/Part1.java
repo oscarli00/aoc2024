@@ -36,19 +36,19 @@ public class Part1 {
                     var pos2 = positions.get(j);
                     var di = pos2[0] - pos1[0];
                     var dj = pos2[1] - pos1[1];
-                    var newPos1 = new int[]{pos1[0] - di, pos1[0] - dj};
-                    if (newPos1[0] >= 0 && newPos1[1] >= 0
-                            && newPos1[0] < map.length && newPos1[1] < map[0].length
-                            && !visited[newPos1[0]][newPos1[1]]) {
+                    var pos3 = new int[]{pos1[0] - di, pos1[1] - dj};
+                    if (pos3[0] >= 0 && pos3[1] >= 0
+                            && pos3[0] < map.length && pos3[1] < map[0].length
+                            && !visited[pos3[0]][pos3[1]]) {
                         ans++;
-                        visited[newPos1[0]][newPos1[1]] = true;
+                        visited[pos3[0]][pos3[1]] = true;
                     }
-                    var newPos2 = new int[]{pos2[0] + di, pos2[0] + dj};
-                    if (newPos2[0] >= 0 && newPos2[1] >= 0
-                            && newPos2[0] < map.length && newPos2[1] < map[0].length
-                            && !visited[newPos2[0]][newPos2[1]]) {
+                    var pos4 = new int[]{pos2[0] + di, pos2[1] + dj};
+                    if (pos4[0] >= 0 && pos4[1] >= 0
+                            && pos4[0] < map.length && pos4[1] < map[0].length
+                            && !visited[pos4[0]][pos4[1]]) {
                         ans++;
-                        visited[newPos2[0]][newPos2[1]] = true;
+                        visited[pos4[0]][pos4[1]] = true;
                     }
                 }
             }

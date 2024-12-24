@@ -2,6 +2,6 @@ import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        new day8.Part1();
+        new day18.Part2();
     }
 }
