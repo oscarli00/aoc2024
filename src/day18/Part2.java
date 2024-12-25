@@ -30,7 +30,6 @@ public class Part2 {
                 parent[i][j] = new Node(i, j);
             }
         }
-
         for (int i = 0; i < corrupted.length; i++) {
             for (int j = 0; j < corrupted[0].length; j++) {
                 if (corrupted[i][j]) {
